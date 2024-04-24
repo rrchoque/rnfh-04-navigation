@@ -1,18 +1,14 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- *
- * @format
- */
+import 'react-native-gesture-handler';
 
 import { NavigationContainer } from '@react-navigation/native';
 import React from 'react';
 import { Text } from 'react-native';
+import { StackNavigator } from './src/presentation/routes/StackNavigator';
 
 function App(): React.JSX.Element {
     return (
       <NavigationContainer>
-        <Text>App.tsx</Text>
+        <StackNavigator />
       </NavigationContainer>
     )
 }
