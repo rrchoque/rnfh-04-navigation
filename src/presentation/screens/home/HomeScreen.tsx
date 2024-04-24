@@ -1,13 +1,14 @@
 import { Pressable, Text, View } from 'react-native';
 import { useEffect } from 'react';
-import { useNavigation, DrawerActions } from '@react-navigation/native';
+import { useNavigation, DrawerActions, type NavigationProp } from '@react-navigation/native';
 
 import { globalStyles } from '../../theme/theme';
 import { PrimaryButton } from '../../components';
+import { type RootStackParams } from '../../routes/StackNavigator';
 
 export const HomeScreen = () => {
 
-  const navigation = useNavigation();
+  const navigation = useNavigation<NavigationProp<RootStackParams>>();
 
   useEffect(() => {
     navigation.setOptions({
@@ -23,12 +24,12 @@ export const HomeScreen = () => {
     <View style={ globalStyles.container }>
       
       <PrimaryButton 
-        onPress={ () => navigation.navigate('Products' as never)  }
+        onPress={ () => navigation.navigate('Products')  }
         label="Productos"
       />
 
       <PrimaryButton 
-        onPress={ () => navigation.navigate('Settings' as never)  }
+        onPress={ () => navigation.navigate('Settings')  }
         label="Settings"
       />
 
